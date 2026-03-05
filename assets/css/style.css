@@ -17,46 +17,59 @@
   padding: 7px 0;
 }
 
-.sprinkling {
+.sprinkling, .accustom {
   padding: 15px 0px 20px;
-  color: rgb(12, 12, 12);
 
   .container {
     gap: 16px;
     align-items: start;
+    justify-content: space-between;
   }
 }
 
-.sprinkling__left,
-.sprinkling__right {
+.left,
+.right {
   position: relative;
   width: 50%;
+  color: rgb(12, 12, 12);
 }
 
-.sprinkling__left .btn {
+.right {
+    margin-left: auto;
+}
+
+.left .btn {
   display: flex;
   margin-left: auto;
   margin-right: auto;
 }
 
-.sprinkling__left__stars {
+.left__stars {
   gap: 15px;
 }
 
-.sprinkling__left__title {
+.left__title {
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-.sprinkling__left__subtitle {
+.left__subtitle {
   margin-bottom: 15px;
 }
 
-.sprinkling__left__info {
+.left__info {
   gap: 10px;
 }
 
-.sprinkling__left__info__item__text {
+.left__info__item__text {
   color: rgb(48, 48, 48);
   margin-left: 12px;
+}
+
+.accustom {
+    padding-top: 30px;
+
+    .left__info {
+        gap: 20px;
+    }
 }

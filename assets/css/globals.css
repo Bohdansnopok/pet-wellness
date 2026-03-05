@@ -49,7 +49,7 @@ body {
   text-align: center;
 
   h3 {
-  letter-spacing: 1.1px;
+    letter-spacing: 1.1px;
     font-weight: bold;
   }
 
@@ -69,13 +69,12 @@ h1 {
 
 h3 {
   font-size: 18px;
-
 }
 
 h4 {
   font-size: 14px;
   letter-spacing: 1.2px;
-font-weight: 400;
+  font-weight: 400;
 }
 
 .flex-row {
@@ -86,4 +85,19 @@ font-weight: 400;
 .flex-col {
   display: flex;
   flex-direction: column;
+}
+
+.row-items-block {
+  padding: 20px 0;
+  background-color: #fff;
+  width: 100%;
+
+  .container {
+    justify-content: space-around;
+  }
+}
+
+video {
+    height: 585px;
+    width: 585px;
 }
