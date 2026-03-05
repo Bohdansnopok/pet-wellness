@@ -1,0 +1,16 @@
+.header__top-line {
+  text-align: center;
+  padding: 7px 0;
+  width: 100%;
+  background-color: rgb(30, 58, 138);
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+.header__bottom-line {
+    background-color: #000;
+    background-color: rgb(0, 0, 0);
+    background-size: auto;
+    background-repeat: no-repeat;
+    justify-content: center;
+}
