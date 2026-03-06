@@ -5,6 +5,7 @@
   background-color: rgb(30, 58, 138);
   background-size: auto;
   background-repeat: no-repeat;
+  color: #fff;
 }
 
 .header__bottom-line {
@@ -97,6 +98,160 @@
 }
 
 .veterinar-feedback__feedback__author {
+  margin-top: 30px;
+  gap: 15px;
+}
+
+.zen-purr {
+  padding: 20px 0;
+
+  .left__info__item.flex-row {
+    align-items: start;
+  }
+
+  .left__subtitle {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  .left__info {
+    gap: 30px;
+  }
+
+  .left__info__item {
+    gap: 10px;
+  }
+
+  .left__info__item__text {
+    font-weight: 300;
+    font-size: 17px;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  .btn {
     margin-top: 30px;
+  }
+}
+
+.steps-to-peace {
+  padding: 10px 0 30px;
+  color: #000;
+
+  h1 {
+    text-align: center;
+  }
+
+  .steps-to-peace__subtitle {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 300;
+    margin: 20px 0 30px;
+  }
+
+  .steps-to-peace__cols-wrapper {
+    align-items: start;
+    gap: 25px;
+
+    .steps-to-peace__col {
+      gap: 25px;
+    }
+
+    .steps-to-peace__center-image {
+      margin-top: 50px;
+    }
+  }
+
+  .steps-to-peace__col__item {
+    align-items: center;
     gap: 15px;
+    text-align: center;
+
+    p {
+      font-size: 19px;
+      font-weight: 300;
+    }
+  }
+
+  .btn {
+    margin-top: 30px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.pet-wellness-vs-altre-marche {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.feedbacks {
+  background-color: rgb(255, 255, 255);
+padding-bottom: 120px;
+
+  .container {
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+
+.feedbacks__feedback {
+  max-width: 370px;
+  color: rgb(37, 42, 50);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.feedbacks__feedback__content-wrapper {
+  padding: 0 10px 20px 10px;
+}
+
+.feedbacks__feedback__image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.feedbacks__feedback__author {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.feedbacks__feedback__avatar {
+  border-radius: 50%;
+}
+
+.feedbacks__feedback__content {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.money-back {
+  padding-top: 60px;
+  position: relative;
+  background-color: rgb(248, 248, 248);
+  font-size: 20px;
+  font-weight: 300;
+  color: rgb(37, 42, 50);
+  padding-bottom: 30px;
+
+  .container {
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+.money-back__logo {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
