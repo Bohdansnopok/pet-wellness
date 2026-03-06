@@ -17,7 +17,8 @@
   padding: 7px 0;
 }
 
-.sprinkling, .accustom {
+.sprinkling,
+.accustom {
   padding: 15px 0px 20px;
 
   .container {
@@ -32,10 +33,6 @@
   position: relative;
   width: 50%;
   color: rgb(12, 12, 12);
-}
-
-.right {
-    margin-left: auto;
 }
 
 .left .btn {
@@ -67,9 +64,39 @@
 }
 
 .accustom {
-    padding-top: 30px;
+  padding-top: 30px;
 
-    .left__info {
-        gap: 20px;
+  .left__info {
+    gap: 20px;
+  }
+}
+
+.veterinar-feedback {
+  gap: 16px;
+  justify-content: space-between;
+  background-color: rgb(248, 248, 248);
+
+  .right {
+    padding: 10px;
+    align-items: end;
+
+    .btn {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
     }
+  }
+}
+
+.veterinar-feedback__feedback-content {
+  padding: 0 50px;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.veterinar-feedback__feedback__author {
+    margin-top: 30px;
+    gap: 15px;
 }
