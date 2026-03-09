@@ -1,0 +1,161 @@
+@media (max-width: 1250px) {
+  img,
+  video {
+    max-width: 450px;
+    max-height: 450px;
+  }
+  .container {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 1000px) {
+  img,
+  video {
+    max-width: 320px;
+    max-height: 320px;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  h4 {
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .steps-to-peace {
+    & .steps-to-peace__col__item {
+      p {
+        font-size: 15px;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .row-items-block {
+    img {
+      height: 80px;
+      width: 80px;
+    }
+  }
+
+  .feedbacks__feedback__content {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mobile-w100p {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+  }
+
+  .header__top-line {
+    padding: 7px 20px;
+    font-size: 12px;
+  }
+
+  .sprinkling,
+  .accustom,
+  .zen-purr {
+    .container {
+      flex-direction: column-reverse;
+      gap: 10px;
+    }
+  }
+
+  .veterinar-feedback,
+  .zen-purr {
+    flex-direction: column;
+
+    .left,
+    .right {
+      width: 100%;
+    }
+  }
+
+  .veterinar-feedback__feedback-content {
+    padding: 0;
+  }
+
+  .steps-to-peace__cols-wrapper {
+    display: none;
+  }
+
+  .steps-to-peace__cols-wrapper.mobile {
+    display: block;
+
+    .grid-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+  }
+
+  .feedbacks {
+    .container {
+      flex-direction: column;
+    }
+  }
+
+  .feedbacks__feedback {
+    width: 100%;
+  }
+
+  .feedbacks__feedback__content {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .accordion-wrapp {
+    flex-direction: column;
+    width: 100%;
+
+    .accordion__left,
+    .accordion__right {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .steps-to-peace__col__item {
+    h2 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .steps-to-peace__cols-wrapper.mobile {
+    display: block;
+
+    .grid-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+  }
+
+}

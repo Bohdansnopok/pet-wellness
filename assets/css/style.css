@@ -183,6 +183,10 @@
   }
 }
 
+.steps-to-peace__cols-wrapper.mobile {
+  display: none;
+} 
+
 .pet-wellness-vs-altre-marche {
   display: flex;
   margin-left: auto;
