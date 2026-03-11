@@ -9,7 +9,6 @@
 }
 
 .header__bottom-line {
-  background-color: #000;
   background-color: rgb(0, 0, 0);
   background-size: auto;
   width: 100%;
@@ -185,7 +184,7 @@
 
 .steps-to-peace__cols-wrapper.mobile {
   display: none;
-} 
+}
 
 .pet-wellness-vs-altre-marche {
   display: flex;
@@ -202,6 +201,19 @@
     align-items: start;
     justify-content: space-between;
     gap: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.75);
+  }
+
+  .steps-to-peace__subtitle {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 15px 0 30px;
+    color: rgba(0, 0, 0, 0.75);
   }
 }
 
@@ -305,7 +317,7 @@
 
 .accordion__item__answer {
   display: none;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 300;
   max-width: 545px;
   padding: 25px 10px 25px 10px;
@@ -323,7 +335,7 @@
   padding-top: 15px;
 }
 
-.accordion__left, 
+.accordion__left,
 .accordion__right {
   width: 50%;
 }
@@ -350,4 +362,20 @@
   font-size: 9px;
   font-weight: 300;
   margin-top: 25px;
+}
+
+.footer__links {
+  justify-content: center;
+  gap: 7px;
+}
+
+.footer__links__link {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  transition: color .3s;
+}
+
+.footer__links__link:hover {
+  color: blueviolet;
 }
