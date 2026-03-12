@@ -373,9 +373,54 @@
   text-decoration: none;
   color: rgba(0, 0, 0, 0.8);
   font-size: 14px;
-  transition: color .3s;
+  transition: color 0.3s;
 }
 
 .footer__links__link:hover {
   color: blueviolet;
+}
+
+.footer-pages {
+  padding-bottom: 100px;
+
+  .footer-pages__logo__wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #ececec;
+    width: 100%;
+    margin-bottom: 100px;
+
+    img {
+      display: block;
+    }
+  }
+
+  .footer-pages__container {
+    max-width: 613px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .footer-pages__title {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .footer-pages__content {
+    font-size: 16px;
+  }
+
+  ul {
+    /* Прибираємо стандартні відступи браузера */
+    list-style-position: outside;
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-top: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+  }
 }
