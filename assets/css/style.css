@@ -484,7 +484,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.55);
-  z-index: 998;
+  z-index: 10;
 }
 
 .order-pop-up__title {
@@ -512,6 +512,7 @@
   align-items: center;
   text-align: center;
   gap: 10px;
+  z-index: 999;
 
   h4 {
     font-size: 20px;
@@ -571,6 +572,7 @@
   align-items: start;
   padding-top: 35px;
   padding-bottom: 35px;
+  gap: 15px;
 
   .product {
     font-size: 20px;
@@ -602,4 +604,11 @@
 .order-pop-up__to-pay__right {
   font-size: 18px;
   font-weight: 500;
+}
+
+.order-pop-up__crosshair {
+  font-size: 50px;
+  text-align: right;
+  border: none;
+  background: none;
 }

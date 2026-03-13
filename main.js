@@ -41,8 +41,8 @@ let popUpOpenBtn = document.querySelectorAll(".btn");
 
 popUpOpenBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
-    popUp.classList.toggle("active");
-    popUpOverlay.classList.toggle("active");
+    popUp.classList.add("active");
+    popUpOverlay.classList.add("active");
   });
 });
 
