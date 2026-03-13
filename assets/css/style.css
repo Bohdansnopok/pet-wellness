@@ -426,7 +426,17 @@
   }
 }
 
-.order-pop-up {
+.order-pop-up,
+.overlay {
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.order-pop-up.active {
+  display: block;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -570,10 +580,10 @@
 .discount {
   margin-top: 10px;
   box-shadow: RGB(37 42 50 / 32%) 0 1px 4px 1px;
-  background-color: #DD9934 ;
+  background-color: #dd9934;
   color: white;
   padding: 10px 15px;
-  border-radius: 10px ;
+  border-radius: 10px;
   font-size: 14px;
 }
 
