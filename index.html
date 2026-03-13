@@ -19,6 +19,99 @@
 </head>
 
 <body>
+  <div class="overlay"></div>
+  <form class="order-pop-up">
+    <h3 class="order-pop-up__title">Оформлення замовлення</h3>
+
+    <div class="order-pop-up__form flex-col">
+      <div class="order-pop-up__form__label">
+        <h4>Імʼя</h4>
+        <input class="order-pop-up__form__label__input" placeholder="Введіть ваше імʼя" />
+      </div>
+      <div class="order-pop-up__form__label">
+        <h4>Номер телефону</h4>
+        <input class="order-pop-up__form__label__input" placeholder="Введіть ваш номер телефону" />
+      </div>
+    </div>
+
+    <h3 class="improve-your-order">Покращіть ваше замовлення</h3>
+
+    <div class="order-pop-up__improvements flex-row">
+      <div class="order-pop-up__improvements__improvement">
+        <h4>1 дифузор + 2 змінні картриджі</h4>
+        <div class="order-pop-up__improvements__improvement__prices">
+          <div class="new-price">₴ 790</div>
+          <div class="old-price">₴ 990</div>
+        </div>
+        <div class="discount">
+          -25%
+        </div>
+
+        <div class="btn">
+          Додати
+        </div>
+      </div>
+      <div class="order-pop-up__improvements__improvement">
+        <h4>2 дифузор + 4 змінні картриджі</h4>
+        <div class="order-pop-up__improvements__improvement__prices">
+          <div class="new-price">₴ 790</div>
+          <div class="old-price">₴ 990</div>
+        </div>
+        <div class="order-pop-up__improvements__improvement__discount discount">
+          -25%
+        </div>
+
+        <div class="btn">
+          Додати
+        </div>
+      </div>
+
+      <div class="order-pop-up__improvements__improvement">
+        <h4>Додаткові змінні картриджі</h4>
+
+        <div class="quantity-wrapper">
+          <button type="button" id="minus">-</button>
+          <input type="number" id="quantity" value="1" min="1" max="100">
+          <button type="button" id="plus">+</button>
+        </div>
+
+        <div class="order-pop-up__products__right">
+          <div class="flex-row">
+            <div class="new-price">₴ 790</div>
+            <div class="old-price">₴ 990</div>
+          </div>
+          <div class="discount">-25%</div>
+        </div>
+
+        <div class="btn">Додати</div>
+      </div>
+    </div>
+
+    <div class="order-pop-up__products flex-row">
+      <div class="order-pop-up__products__left">
+        <div class="product">1 дифузор + 2 змінні картриджі</div>
+      </div>
+      <div class="order-pop-up__products__right flex-row">
+        <div class="new-price">₴ 790</div>
+        <div class="old-price">₴ 990</div>
+        <div class="discount">-25%</div>
+      </div>
+    </div>
+
+    <div class="order-pop-up__line"></div>
+
+    <div class="order-pop-up__to-pay flex-row">
+      <div class="order-pop-up__to-pay__left">
+        <h3>Разом до оплати:</h3>
+      </div>
+      <div class="order-pop-up__to-pay__right">
+        <div class="new-price">₴ 1 590</div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn">Підтвердити замовлення</button>
+  </form>
+
   <header class="header">
     <h3 class="header__top-line">
       <strong>Розпродаж: знижка 50%</strong>
@@ -91,7 +184,7 @@
         <video
           poster="https://img.funnelish.com/43002/thumbnails/1744639048-4ab056ae-5b20-47de-824e-a32f8fee240amp4.jpg?auto=webp&amp;optimize=medium"
           data-src="https://videos.funnelish.com/43002/1744639048-4ab056ae-5b20-47de-824e-a32f8fee240a.mp4" autoplay=""
-          loop="loop" muted="" playsinline="" disablepictureinpicture="" class="__video mobile-w100p"
+          loop="loop" muted="" playsinline="" disablepictureinpicture="" class="__video"
           src="assets/video/giorno-video.mp4"></video>
       </div>
     </div>
@@ -145,8 +238,7 @@
         </div>
       </div>
       <div class="right mobile-w100p">
-        <video class="mobile-w100p" width="100%" autoplay="" loop="" muted="" playsinline=""
-          style="border-radius:10px;">
+        <video width="100%" autoplay="" loop="" muted="" playsinline="" style="border-radius:10px;">
           <source src="https://cdn.shopify.com/videos/c/o/v/01073e5bbc784fa6a7a52d68e65de01f.mp4" type="video/mp4">
         </video>
       </div>

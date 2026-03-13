@@ -1,9 +1,13 @@
 @media (max-width: 1250px) {
-  img,
-  video {
+  img {
     max-width: 450px;
     max-height: 450px;
   }
+
+  video {
+    max-height: 405px;
+  }
+
   .container,
   .footer-pages {
     padding: 0 10px;
@@ -11,10 +15,9 @@
 }
 
 @media (max-width: 1000px) {
-  img,
-  video {
-    max-width: 405px;
-    max-height: 405px;
+  img {
+    max-width: 320px;
+    max-height: 320px;
   }
 
   h1 {
@@ -60,8 +63,8 @@
 
   .row-items-block {
     img {
-      height: 100px;
-      width: 100px;
+      height: 70px;
+      width: 70px;
     }
   }
 
@@ -160,5 +163,4 @@
       gap: 10px;
     }
   }
-
 }

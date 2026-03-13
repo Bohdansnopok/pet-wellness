@@ -104,11 +104,11 @@ h4 {
 }
 
 video {
-  width: 585px;  /* Або 100% для адаптивності */
+  width: 100%; 
   height: 585px; 
   object-fit: cover;
-  border-radius: 18px; /* Додав, бо бачив заокруглення на скріншоті */
-  display: block;    /* Прибирає зайві відступи знизу */
+  border-radius: 18px; 
+  display: block;   
 }
 
 .white-bg {
