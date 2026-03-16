@@ -254,7 +254,7 @@
   padding-top: 60px;
   position: relative;
   background-color: rgb(248, 248, 248);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   color: rgb(37, 42, 50);
   padding-bottom: 30px;
@@ -515,14 +515,14 @@
   z-index: 999;
 
   h4 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   input {
     border-radius: 5px;
     padding: 3px;
     border: 1px solid #000;
-    font-size: 18px;
+    font-size: 17px;
     width: 50px;
   }
 
@@ -535,7 +535,7 @@
     button {
       border: none;
       background: none;
-      font-size: 20px;
+      font-size: 18px;
       background-color: rgb(190, 174, 174);
       width: 25px;
       height: 25px;
@@ -546,7 +546,6 @@
 }
 
 .order-pop-up__improvements__improvement__prices {
-  font-size: 18px;
   font-weight: 600;
 }
 
@@ -554,17 +553,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 18px;
+  font-size: 17px;
 
   .flex-row {
     gap: 5px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
   }
 }
 
 .old-price {
   text-decoration: line-through #000;
+  font-size: 14px;
+}
+
+.new-price {
+  font-size: 18px;
 }
 
 .order-pop-up__products {
@@ -575,7 +579,7 @@
   gap: 15px;
 
   .product {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -586,7 +590,7 @@
   color: white;
   padding: 10px 15px;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .order-pop-up__line {
@@ -602,7 +606,7 @@
 }
 
 .order-pop-up__to-pay__right {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
 }
 

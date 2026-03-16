@@ -144,11 +144,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const btn = card.querySelector(".btn");
       if (index < 2) {
         const isActive = index === state.mainProductIndex;
-        btn.textContent = isActive ? "Видалити" : "Додати";
-        btn.style.backgroundColor = isActive ? "#cc0000" : "";
+        btn.textContent = isActive ? "Вибрано" : "Вибрати";
+        btn.style.backgroundColor = isActive ? "#FFD700" : "";
       } else {
-        btn.textContent = state.extraProductAdded ? "Видалити" : "Додати";
-        btn.style.backgroundColor = state.extraProductAdded ? "#cc0000" : "";
+        btn.textContent = state.extraProductAdded ? "Вибрано" : "Вибрати";
+        btn.style.backgroundColor = state.extraProductAdded ? "#FFD700" : "";
       }
     });
 

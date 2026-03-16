@@ -15,9 +15,11 @@
 }
 
 @media (max-width: 1000px) {
-  img {
-    max-width: 320px;
-    max-height: 320px;
+
+  .pet-wellness-vs-altre-marche  {
+    width: 100%;
+    height: auto;
+    margin: 0;  
   }
 
   h1 {
@@ -63,8 +65,8 @@
 
   .row-items-block {
     img {
-      height: 70px;
-      width: 70px;
+      height: 100px;
+      width: 100px;
     }
   }
 
@@ -159,7 +161,7 @@
 
     .grid-cols {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 10px;
     }
   }
