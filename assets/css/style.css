@@ -447,6 +447,11 @@
   padding: 25px 35px;
   border-radius: 10px;
 
+  img {
+    height: 250px;
+    width: 100%;
+  }
+
   .improve-your-order {
     text-align: center;
     margin-bottom: 20px;
