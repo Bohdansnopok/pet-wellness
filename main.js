@@ -38,18 +38,32 @@ document.addEventListener("DOMContentLoaded", function () {
 let popUp = document.querySelector(".order-pop-up");
 let popUpOverlay = document.querySelector(".overlay");
 let popUpOpenBtn = document.querySelectorAll(".btn");
+let popUpCloseBtn = document.querySelector(".order-pop-up__crosshair");
+
+function openPopUp() {
+  popUp.classList.add("active");
+  popUpOverlay.classList.add("active");
+  document.body.classList.add("modal-open");
+}
+
+function closePopUp() {
+  popUp.classList.remove("active");
+  popUpOverlay.classList.remove("active");
+  document.body.classList.remove("modal-open");
+}
 
 popUpOpenBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
-    popUp.classList.add("active");
-    popUpOverlay.classList.add("active");
+    openPopUp();
   });
 });
 
-popUpOverlay.addEventListener('click', () => {
-    popUp.classList.remove("active");
-    popUpOverlay.classList.remove("active");
-})
+popUpOverlay.addEventListener("click", closePopUp);
+
+popUpCloseBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  closePopUp();
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Дані про товари
