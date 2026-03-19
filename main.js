@@ -71,16 +71,20 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       id: 0,
       name: "1 дифузор + 2 змінні картриджі",
-      price: 790,
-      oldPrice: 990,
+      price: 890,
+      oldPrice: 1412,
     },
     {
       id: 1,
       name: "2 дифузори + 4 змінні картриджі",
-      price: 1490,
-      oldPrice: 1980,
+      price: 1440,
+      oldPrice: 2880,
     },
-    { id: 2, name: "Додаткові змінні картриджі", price: 790, oldPrice: 990 },
+    {
+      id: 2,
+      name: "Додаткові змінні картриджі",
+      price: 390,
+    },
   ];
 
   // 2. Стан кошика
@@ -101,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Елементи в 3-й картці для динамічного оновлення ціни
   const extraCardPrice = cards[2].querySelector(".new-price");
-  const extraCardOldPrice = cards[2].querySelector(".old-price");
 
   const btnMinus = document.getElementById("minus");
   const btnPlus = document.getElementById("plus");
@@ -109,13 +112,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- ФУНКЦІЇ ---
 
+  function formatPrice(price) {
+    return `₴ ${price.toLocaleString()}`;
+  }
+
+  function syncCardPrices() {
+    cards.forEach((card, index) => {
+      const product = productsData[index];
+      const cardNewPrice = card.querySelector(".new-price");
+      const cardOldPrice = card.querySelector(".old-price");
+
+      if (!product || !cardNewPrice) return;
+
+      if (index === 2) {
+        cardNewPrice.textContent = formatPrice(product.price * state.extraQuantity);
+        return;
+      }
+
+      if (!cardOldPrice) return;
+      cardNewPrice.textContent = formatPrice(product.price);
+      cardOldPrice.textContent = formatPrice(product.oldPrice);
+    });
+  }
+
   // Оновлення цін ТІЛЬКИ всередині 3-ї картки (візуально при кліку на +/-)
   function updateExtraCardDisplay() {
     const basePrice = productsData[2].price;
-    const baseOldPrice = productsData[2].oldPrice;
 
-    extraCardPrice.textContent = `₴ ${(basePrice * state.extraQuantity).toLocaleString()}`;
-    extraCardOldPrice.textContent = `₴ ${(baseOldPrice * state.extraQuantity).toLocaleString()}`;
+    extraCardPrice.textContent = formatPrice(basePrice * state.extraQuantity);
   }
 
   // Головна функція оновлення всього поп-апу
@@ -138,12 +162,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (state.extraProductAdded) {
       const extraProd = productsData[2];
       const currentExtraPrice = extraProd.price * state.extraQuantity;
-      const currentExtraOldPrice = extraProd.oldPrice * state.extraQuantity;
       totalSum += currentExtraPrice;
       htmlContent += generateProductHTML(
         `${extraProd.name} (x${state.extraQuantity})`,
         currentExtraPrice,
-        currentExtraOldPrice,
       );
     }
 
@@ -151,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     basketContainer.innerHTML =
       htmlContent ||
       '<div style="color: gray; padding: 10px 0;">Оберіть товари для замовлення</div>';
-    totalPriceElement.textContent = `₴ ${totalSum.toLocaleString()}`;
+    totalPriceElement.textContent = formatPrice(totalSum);
 
     // Кнопки
     cards.forEach((card, index) => {
@@ -166,16 +188,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    syncCardPrices();
     updateExtraCardDisplay();
   }
 
-  function generateProductHTML(name, price, oldPrice) {
+  function generateProductHTML(name, price, oldPrice = null) {
+    const oldPriceHTML =
+      oldPrice !== null
+        ? `<div class="old-price" style="text-decoration: line-through; color: #999; font-size: 0.9em;">₴ ${oldPrice.toLocaleString()}</div>`
+        : "";
+
     return `
             <div class="order-pop-up__products__item flex-row" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 8px;">
                 <div class="product">${name}</div>
                 <div class="prices" style="text-align: right;">
                     <div class="new-price" style="font-weight: bold;">₴ ${price.toLocaleString()}</div>
-                    <div class="old-price" style="text-decoration: line-through; color: #999; font-size: 0.9em;">₴ ${oldPrice.toLocaleString()}</div>
+                    ${oldPriceHTML}
                 </div>
             </div>
         `;
