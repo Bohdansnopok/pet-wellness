@@ -524,6 +524,7 @@ body.modal-open {
   align-items: center;
   text-align: center;
   gap: 10px;
+  height: 500px;
   z-index: 999;
 
   h4 {
@@ -554,6 +555,10 @@ body.modal-open {
       border-radius: 50%;
       margin-top: 10px;
     }
+  }
+
+  .btn {
+    margin-top: auto;
   }
 }
 
@@ -596,13 +601,12 @@ body.modal-open {
 }
 
 .discount {
-  margin-top: 10px;
   box-shadow: RGB(37 42 50 / 32%) 0 1px 4px 1px;
   background-color: #dd9934;
   color: white;
-  padding: 10px 15px;
+  padding: 7px 12px;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .order-pop-up__line {

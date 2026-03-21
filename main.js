@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: 2,
       name: "Додаткові змінні картриджі",
       price: 390,
+      oldPrice: 560,
     },
   ];
 
@@ -116,30 +117,62 @@ document.addEventListener("DOMContentLoaded", () => {
     return `₴ ${price.toLocaleString()}`;
   }
 
+  function calculateDiscount(price, oldPrice) {
+    if (!oldPrice || oldPrice <= price) return "";
+    return `-${Math.round(((oldPrice - price) / oldPrice) * 100)}%`;
+  }
+
   function syncCardPrices() {
     cards.forEach((card, index) => {
       const product = productsData[index];
       const cardNewPrice = card.querySelector(".new-price");
       const cardOldPrice = card.querySelector(".old-price");
+      const cardDiscount = card.querySelector(".discount");
 
       if (!product || !cardNewPrice) return;
 
       if (index === 2) {
-        cardNewPrice.textContent = formatPrice(product.price * state.extraQuantity);
+        const currentPrice = product.price * state.extraQuantity;
+        const currentOldPrice = product.oldPrice * state.extraQuantity;
+
+        cardNewPrice.textContent = formatPrice(currentPrice);
+        if (cardOldPrice) {
+          cardOldPrice.textContent = formatPrice(currentOldPrice);
+        }
+        if (cardDiscount) {
+          cardDiscount.textContent = calculateDiscount(
+            product.price,
+            product.oldPrice,
+          );
+        }
         return;
       }
 
       if (!cardOldPrice) return;
       cardNewPrice.textContent = formatPrice(product.price);
       cardOldPrice.textContent = formatPrice(product.oldPrice);
+      if (cardDiscount) {
+        cardDiscount.textContent = calculateDiscount(product.price, product.oldPrice);
+      }
     });
   }
 
   // Оновлення цін ТІЛЬКИ всередині 3-ї картки (візуально при кліку на +/-)
   function updateExtraCardDisplay() {
     const basePrice = productsData[2].price;
+    const baseOldPrice = productsData[2].oldPrice;
+    const extraCardOldPrice = cards[2].querySelector(".old-price");
+    const extraCardDiscount = cards[2].querySelector(".discount");
 
     extraCardPrice.textContent = formatPrice(basePrice * state.extraQuantity);
+    if (extraCardOldPrice) {
+      extraCardOldPrice.textContent = formatPrice(
+        baseOldPrice * state.extraQuantity,
+      );
+    }
+    if (extraCardDiscount) {
+      extraCardDiscount.textContent = calculateDiscount(basePrice, baseOldPrice);
+    }
   }
 
   // Головна функція оновлення всього поп-апу
@@ -162,10 +195,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (state.extraProductAdded) {
       const extraProd = productsData[2];
       const currentExtraPrice = extraProd.price * state.extraQuantity;
+      const currentExtraOldPrice = extraProd.oldPrice * state.extraQuantity;
       totalSum += currentExtraPrice;
       htmlContent += generateProductHTML(
         `${extraProd.name} (x${state.extraQuantity})`,
         currentExtraPrice,
+        currentExtraOldPrice,
       );
     }
 
@@ -181,10 +216,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (index < 2) {
         const isActive = index === state.mainProductIndex;
         btn.textContent = isActive ? "Вибрано" : "Вибрати";
-        btn.style.backgroundColor = isActive ? "#FFD700" : "";
+        btn.style.backgroundColor = isActive ? "#d4a017" : "";
       } else {
         btn.textContent = state.extraProductAdded ? "Вибрано" : "Вибрати";
-        btn.style.backgroundColor = state.extraProductAdded ? "#FFD700" : "";
+        btn.style.backgroundColor = state.extraProductAdded ? "#d4a017" : "";
       }
     });
 
@@ -197,6 +232,10 @@ document.addEventListener("DOMContentLoaded", () => {
       oldPrice !== null
         ? `<div class="old-price" style="text-decoration: line-through; color: #999; font-size: 0.9em;">₴ ${oldPrice.toLocaleString()}</div>`
         : "";
+    const discountHTML =
+      oldPrice !== null
+        ? `<div class="discount">${calculateDiscount(price, oldPrice)}</div>`
+        : "";
 
     return `
             <div class="order-pop-up__products__item flex-row" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 8px;">
@@ -204,6 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="prices" style="text-align: right;">
                     <div class="new-price" style="font-weight: bold;">₴ ${price.toLocaleString()}</div>
                     ${oldPriceHTML}
+                    ${discountHTML}
                 </div>
             </div>
         `;
